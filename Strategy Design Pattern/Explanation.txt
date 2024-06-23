@@ -1,0 +1,42 @@
+Problem to be solved:
+	let's take a scenario where your boss asks you to build a Compression Algorithm,
+	and at first you are required to build an algorithm for compressing files into Zip files,
+	however, your boss lets you know that the company will require more strategies in the foreseeable future as the client’s need evolves.
+
+Difination: 
+	The Strategy Pattern is a behavioral design pattern that enables selecting an algorithm’s implementation at runtime.
+	Instead of implementing a single algorithm directly, code receives runtime instructions as to which in a family of algorithms to use.
+
+Implementation:
+	ICalculationStrategy Interface:
+		This interface is strategy common place that have a common methods (Calculate()) to be implemented by each strategy with different algorithms,
+		in this example we implement ICalculationStrategy interface by AdditionalStrategy, SubtractingStrategy, DivisionStrategy, and MultiplicationStrategy classes,
+		and these our different algorithms to be implemented.
+
+	CalculateContext:
+		This class will be used to create an object, and this class is injected by strategy interface (ICalculateStrategy),
+		and that means this is the only one object will be created and we will send a specified object for specified algorithm that will be used,
+		it has methods (Calculate()) that use strategy (ICalculateStrategy) interface methods (Calculate()).
+
+	AdditionalStrategy, SubtractingStrategy, DivisionStrategy, and MultiplicationStrategy:
+		There are the implemented algorithms that will be used later in runtime, and we have to create new class for each new algorithm will be implemented.
+
+Advantadges:
+	1. Provides a clear separation between a set of complex algorithms.
+	2. Promotes open/closed principle. New strategies can be added without modifying the existing code.
+	3. Avoids exposing complex, algorithm-specific data structures.
+
+Disadvantages:
+	1. Can increase the number of objects in an application.
+	2. Clients must be aware of the different strategies to select the right one.
+
+Real-World Scenarios and Examples:
+	1. E-commerce Discounts:
+		An e-commerce platform might have different discount algorithms.
+		The Strategy Pattern can encapsulate each discount algorithm, making it easy to apply different discounts to orders.
+	2. Image Compression:
+		An image processing application might support different compression algorithms.
+		The Strategy Pattern can be used to switch between different compression methods easily.
+	3. Payment Gateways:
+		An e-commerce platform might support multiple payment gateways.
+		Each gateway can be implemented as a strategy, making it easy to switch between them.

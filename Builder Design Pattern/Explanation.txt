@@ -1,0 +1,50 @@
+Problem to be solved:
+	Let's imagine that you are asked to make a class with many properties, and you have to initalize these properties when creating an object from this class,
+	you have to make a constructor to take all values that must be assigned to properties, and this destroys code readability, maintainability, and open closed principle,
+	imagine if you want to add new property, you have to initialize it inside the constructor and add its new value everywhere you create an object,
+	or you will make the new property optional parameter inside the constructor if it is not mandatory.
+
+Difination: 
+	Builder is a creational design pattern, which allows constructing complex objects step by step.
+
+Implementation:
+	Property class:
+		this class has many properties that must be initialized, and maybe we will add more in the future, and this class call product class.
+
+	PropertyBuilder class:
+		this class is the builder class to build property objects, it has a property object as a class member inside, and property object has its members too,
+		this class has methods to initialize each property inside Property object and return PropertyBuilder with new additions (return "this" keyword for chaining the properties initialization),
+		and the final method is build method that returns Property object after initialize all its property,
+		PropertyBuilder class is called builder.
+
+	Program class:
+		this class is called director class because it uses the builder class (PropertyBuilder).
+
+Advantadges:
+	1. Separation of Construction and Representation.
+	2. Improved Code Readability.
+	3. Reduced Complexity: The builder pattern reduces the complexity of creating an object by breaking down the construction process into smaller, more manageable steps.
+	4. Improved Flexibility.
+	5. Thread-Safety: The builder pattern can be used to create thread-safe objects by ensuring that the object is fully constructed before it is used.
+	6. Improved Error Handling.
+
+Disadvantages:
+	1. Increased Complexity: The builder pattern can add complexity to the code, especially for simple objects.
+	2. Over-Engineering: The builder pattern can lead to over-engineering, where the construction process is more complex than necessary.
+	3. Performance Overhead: The builder pattern can introduce performance overhead, especially if the construction process involves many steps.
+	4. Difficulty in Debugging: The builder pattern can make it more difficult to debug the code, especially if the construction process involves many steps.
+	5. Not Suitable for Simple Objects: The builder pattern is not suitable for simple objects that can be constructed using a simple constructor.
+	6. Requires More Code: The builder pattern requires more code than a simple constructor, which can make the code more verbose.
+
+Real-World Scenarios and Examples:
+	1. Configuring a User Account:
+		Creating a user account with various optional settings such as email notifications, SMS alerts, and profile picture.
+	2. Creating a Meal for a Restaurant Order:
+		Constructing a meal with various components like a main dish, side dish, drink, and dessert.
+	3. HTML Document Generation:
+		When building an HTML document, you might have different elements like headers, paragraphs, images, and links.
+		The Builder pattern can help create an HTML document by adding elements one by one, ensuring proper nesting and structure.
+	4. Report Generation:
+		Suppose you’re developing a reporting system.
+		Different reports (PDF, CSV, HTML) have varying structures (headers, footers, content).
+		The Builder pattern simplifies creating these reports by separating their construction from their representation.
