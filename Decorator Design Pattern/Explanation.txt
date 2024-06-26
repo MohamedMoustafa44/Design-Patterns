@@ -1,0 +1,46 @@
+Problem to be solved:
+	let's imagine that you asked to make a program for selling ice cream,
+	and there are many different types of ice cream like basic ice cream without any additions, nutrogen ice cream, etc, and each type has its own price and description,
+	and there are many additions that you can add for each type of ice cream like chocolate, sprinkles and strawberry, etc, and each addition should affect the price and description,
+	in this case you can make many classes one for basic ice cream with chocolate, and another for basic ice cream with sprinkles and another one for basic ice cream with strawberry,
+	and the same with the another type of ice cream (nitrogen ice cream), what if we add another new type of ice cream,
+	we add new class for the new type with each addition,
+	and what if we need to add another new addition to explain the new price and description for the new product,
+	we need to add new class for this addition with each type of ice cream to explain the new price and description for the new product,
+	and this is the problem, many classes wil be added, and we cannot handle any additions for new product.
+
+Difination: 
+	The Decorator Design Pattern is a structural pattern that allows adding new functionality to an existing object without altering its original class.
+	This pattern involves wrapping the original object in a decorator class, which has the same interface as the object it decorates.
+	The decorator class then adds its behavior to the object during runtime, allowing for increased flexibility and modularity in programming.
+
+Implementation:
+	
+
+Advantadges:
+	1. Flexibility: Decorators allow you to add or remove behavior dynamically, without modifying the underlying object.
+	2. Extensibility: You can create multiple decorators to extend the behavior of an object in different ways.
+	3. Reusability: Decorators can be reused across multiple objects, reducing code duplication.
+	4. Separation of Concerns: Decorators help separate the core functionality of an object from additional responsibilities.
+	5. Easy Maintenance: Decorators make it easier to modify or update behavior without affecting the underlying object.
+	6. Improved Readability: Decorators can make the code more readable by breaking down complex behavior into smaller, more manageable pieces.
+	7. Testability: Decorators can make it easier to test objects by allowing you to isolate and test individual behaviors.
+
+Disadvantages:
+	1. Increased Complexity: Decorators can add complexity to the code, especially if not implemented carefully.
+	2. Over-Engineering: It's easy to over-engineer a system using decorators, leading to unnecessary complexity.
+	3. Performance Overhead: Decorators can introduce performance overhead due to the additional indirection and method calls.
+	4. Debugging Challenges: Debugging issues with decorators can be more difficult due to the added layer of abstraction.
+	5. Limited Control: Decorators may not provide complete control over the underlying object's behavior.
+	6. Dependency Issues: Decorators can create dependencies between objects, making it harder to change or replace them.
+	7. Overuse: Decorators can be overused, leading to a "decorator hell" where objects are wrapped in multiple layers of decorators.
+
+Real-World Scenarios and Examples:
+	1. Financial Systems:
+		In a financial system, you can use decorators to add fees, taxes, or interest rates to transactions.
+		Each decorator adds a new layer of calculation without modifying the underlying transaction data.
+
+	2. Coffee Shop:
+		A coffee shop offers a basic coffee (Component).
+		You can add decorations like whipped cream (Decorator), chocolate syrup (Decorator), or extra shots of espresso (Decorator) to create a customized coffee drink.
+		Each decoration adds a new behavior or responsibility to the basic coffee without modifying its underlying structure.

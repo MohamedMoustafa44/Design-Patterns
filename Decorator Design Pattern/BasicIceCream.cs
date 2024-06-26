@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-
-namespace Decorator_Design_Pattern;
+﻿namespace Decorator_Design_Pattern;
 
 public class BasicIceCream : IIceCream
 {
