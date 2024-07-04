@@ -15,7 +15,12 @@ Difination:
 	The decorator class then adds its behavior to the object during runtime, allowing for increased flexibility and modularity in programming.
 
 Implementation:
-	
+	We have IIceCream interface that has the common functionality for all ice cream types.
+	We have 2 types of ice cream, first is BasicIceCream, and the second is NitrogenIceCream, and we have some additions that we can add for each type of ice cream, it will affect the price.
+	We have Strawberry, Chocolate, and Sprinkles additions, and each should affect the price.
+	So we made IceCreamDecorator that implements IIceCream interface and has instance from IIceCream to identify ice cream type when the app is running and call its methods inside each implemented method.
+	Each class for addition (Chocolate, Strawberry, and Sprinkles) inherits from IceCreamDecorator and override all its method and add the additions that should be added to these methods.
+	In Program.cs we made IIceCream object initilized as BasicIceCream and another one as NitrogenIceCream, and wrap this object inside any addition for update its details.
 
 Advantadges:
 	1. Flexibility: Decorators allow you to add or remove behavior dynamically, without modifying the underlying object.
