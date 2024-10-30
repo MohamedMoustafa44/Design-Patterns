@@ -12,13 +12,13 @@ public class ValidPINState : IState
         if (amount > 0)
         {
             Console.WriteLine("Please wait while transaction is proccessing...");
-            Thread.Sleep(3000);
+            Task.Delay(3000);
             atm.Account.Deposite(amount);
             Console.WriteLine("Your current balance is: " + atm.Account.GetBalance());
         }
         else
         {
-            Console.WriteLine("Invalid ammout!");
+            Console.WriteLine("Invalid amount!");
         }
     }
 
@@ -43,7 +43,7 @@ public class ValidPINState : IState
         if (atm.Account.Balance >= amount)
         {
             Console.WriteLine("Please wait while transaction is proccessing...");
-            Thread.Sleep(3000);
+            Task.Delay(3000);
             atm.Account.Withdraw(amount);
             Console.WriteLine("Your current balance is: " + atm.Account.GetBalance());
         }
